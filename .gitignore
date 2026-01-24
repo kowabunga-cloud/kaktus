@@ -10,12 +10,6 @@ debian/debhelper-build-stamp
 debian/files
 debian/*.debhelper
 debian/*.substvars
-debian/kowabunga-kahuna/
-debian/kowabunga-computing-agent/
-debian/kowabunga-networking-agent/
-debian/kowabunga-storage-agent/
-debian/kowabunga-kawaii-agent/
-debian/kowabunga-konvey-agent/
 tests
 tmp
 node_modules/
