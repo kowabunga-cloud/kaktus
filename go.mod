@@ -4,9 +4,9 @@ go 1.25.0
 
 require (
 	github.com/ceph/go-ceph v0.37.0
-	github.com/digitalocean/go-libvirt v0.0.0-20251202224409-8b0babaf9393
+	github.com/digitalocean/go-libvirt v0.0.0-20260106181248-56be673cd6a5
 	github.com/go-resty/resty/v2 v2.17.1
-	github.com/klauspost/compress v1.18.2
+	github.com/klauspost/compress v1.18.3
 	github.com/kowabunga-cloud/common v0.64.1
 	github.com/lima-vm/go-qcow2reader v0.7.1
 	github.com/machinebox/progress v0.2.0
@@ -15,7 +15,7 @@ require (
 )
 
 require (
-	github.com/BurntSushi/toml v1.5.0 // indirect
+	github.com/BurntSushi/toml v1.6.0 // indirect
 	github.com/Masterminds/goutils v1.1.1 // indirect
 	github.com/Masterminds/semver v1.5.0 // indirect
 	github.com/Masterminds/sprig v2.22.0+incompatible // indirect
@@ -23,7 +23,7 @@ require (
 	github.com/alecthomas/units v0.0.0-20240927000941-0f3dac36c52b // indirect
 	github.com/cavaliergopher/grab/v3 v3.0.1 // indirect
 	github.com/coreos/go-systemd/v22 v22.6.0 // indirect
-	github.com/godbus/dbus/v5 v5.1.0 // indirect
+	github.com/godbus/dbus/v5 v5.2.2 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/huandu/xstrings v1.5.0 // indirect
@@ -38,13 +38,13 @@ require (
 	github.com/sethvargo/go-password v0.3.1 // indirect
 	github.com/tredoe/osutil v1.5.0 // indirect
 	github.com/xhit/go-str2duration/v2 v2.1.0 // indirect
-	golang.org/x/crypto v0.46.0 // indirect
-	golang.org/x/exp/typeparams v0.0.0-20250819193227-8b4c13bb791b // indirect
+	golang.org/x/crypto v0.47.0 // indirect
+	golang.org/x/exp/typeparams v0.0.0-20260112195511-716be5621a96 // indirect
 	golang.org/x/lint v0.0.0-20241112194109-818c5a804067 // indirect
-	golang.org/x/mod v0.31.0 // indirect
-	golang.org/x/net v0.48.0 // indirect
+	golang.org/x/mod v0.32.0 // indirect
+	golang.org/x/net v0.49.0 // indirect
 	golang.org/x/sync v0.19.0 // indirect
-	golang.org/x/sys v0.39.0 // indirect
-	golang.org/x/tools v0.40.0 // indirect
+	golang.org/x/sys v0.40.0 // indirect
+	golang.org/x/tools v0.41.0 // indirect
 	honnef.co/go/tools v0.6.1 // indirect
 )
