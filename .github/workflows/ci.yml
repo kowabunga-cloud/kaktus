@@ -1,36 +1,18 @@
-name: CI
+name: Continuous Integration
 
 on:
   push:
     branches: master
+    paths:
+      - 'cmd/kaktus/**'
+      - 'internal/kaktus/**'
+  pull_request:
+    branches: master
+  workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Update packages
-        run: sudo apt-get update
-      - name: Install package dependencies
-        run: sudo apt-get install -y debhelper librados-dev librbd-dev gcc
-      - uses: actions/checkout@v4
-      - name: Setup Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: 1.25
-      - name: Install dependencies
-        run: make mod
-      - name: Format code
-        run: make fmt
-      - name: Code Acceptance
-        run: make vet
-      - name: Linter
-        run: make lint
-      - name: Build
-        run: make build
-      - name: Tests
-        run: make tests
-      - name: Upload test results to Codecov
-        uses: codecov/codecov-action@v5
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+  ci:
+    uses: kowabunga-cloud/workflows/.github/workflows/go-ci.yml@master
+    secrets: inherit
+    with:
+      pkgs: "librados-dev librbd-dev gcc"
