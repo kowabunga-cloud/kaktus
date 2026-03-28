@@ -78,13 +78,28 @@ func (k *Kaktus) NodeCapabilities(args *proto.KaktusNodeCapabilitiesArgs, reply 
 		return err
 	}
 
+	capSockets, err := toUint8(len(sockets))
+	if err != nil {
+		return err
+	}
+
+	capCores, err := toUint16(len(cores))
+	if err != nil {
+		return err
+	}
+
+	capThreads, err := toUint16(len(threads))
+	if err != nil {
+		return err
+	}
+
 	*reply = proto.KaktusNodeCapabilitiesReply{
 		Arch:             caps.Host.CPU.Arch,
 		Vendor:           caps.Host.CPU.Vendor,
 		Model:            caps.Host.CPU.Model,
-		Sockets:          uint8(len(sockets)),
-		Cores:            uint16(len(cores)),
-		Threads:          uint16(len(threads)),
+		Sockets:          capSockets,
+		Cores:            capCores,
+		Threads:          capThreads,
 		Memory:           memory,
 		GuestEmulator:    emulator,
 		GuestMachineName: machine,

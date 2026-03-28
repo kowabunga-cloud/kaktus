@@ -29,7 +29,7 @@ type KaktusAgentLibvirtConfig struct {
 }
 
 type KaktusAgentLibvirtTlsConfig struct {
-	PrivateKey string `yaml:"key"`
+	PrivateKey string `yaml:"key"` // #nosec G117
 	PublicCert string `yaml:"cert"`
 	CA         string `yaml:"ca"`
 }
