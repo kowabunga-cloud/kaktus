@@ -37,6 +37,18 @@ This approach allows you to:
 |--------------------|-----------------------------------------------------------------------------------------------------|
 | **Kaktus**           | [![Kowabunga Release](https://img.shields.io/github/v/release/kowabunga-cloud/kaktus)](https://github.com/kowabunga-cloud/kaktus/releases) |
 
+## Development
+
+Kiwi development relies on [Semantic Versioning](https://semver.org/) and unscoped [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for development.
+
+Changelog is automatically triggered from commits summary from the following commits types: **feat**, **fix**, **perf**, **chore**, **docs**, e.g.
+
+```
+feat!: upgrade API version         <- will increase version major number at release
+feat: add new super nice feature   <- will increase version minor number at release
+fix: correct bug XYZ               <- will increase version patch number at release
+```
+
 ## License
 
 Licensed under [Apache License, Version 2.0](https://opensource.org/license/apache-2-0), see [`LICENSE`](LICENSE).
