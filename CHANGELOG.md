@@ -1,3 +1,42 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [0.65.0](https://github.com/kowabunga-cloud/kaktus/compare/v0.64.1...v0.65.0) (2026-03-28)
+
+### Bug Fixes
+
+* correct diskimage size return type ([21720ba](https://github.com/kowabunga-cloud/kaktus/commit/21720ba51e413e9146ee8aeafc35c8ebed6d2414))
+
+### Chores
+
+* add better gosec compliance ([2d42de5](https://github.com/kowabunga-cloud/kaktus/commit/2d42de5118ef695552ce6120bbd3cd00b7f376d5))
+* add Claude doc file ([3ed4f44](https://github.com/kowabunga-cloud/kaktus/commit/3ed4f440ed826109fba9a6df1f8033ccba9653b4))
+* add editor config ([8177899](https://github.com/kowabunga-cloud/kaktus/commit/81778990b01668e96853dac3291f9b26c26605b3))
+* add pre-commit hooks ([9a58f9b](https://github.com/kowabunga-cloud/kaktus/commit/9a58f9ba52f58e7c1ad2109ade78bd5c27a8e050))
+* add semantic release config ([7621f33](https://github.com/kowabunga-cloud/kaktus/commit/7621f33f5aad30d8febeaa824193d2eb93ad20f2))
+* always use latest version of build tools ([6b53604](https://github.com/kowabunga-cloud/kaktus/commit/6b536046c6a21cb6e45ba67269fd1e88c50c164a))
+* declare deb pkgs in sec/vuln CI actions ([6f916a5](https://github.com/kowabunga-cloud/kaktus/commit/6f916a50300c7a6458bde10782ab4976d43514ab))
+* ignore some files ([d35fb1e](https://github.com/kowabunga-cloud/kaktus/commit/d35fb1ed3598337f0e3b8da491f3a79b27ddbc4b))
+* re-use project workflows for GH actions ([9c7c91e](https://github.com/kowabunga-cloud/kaktus/commit/9c7c91e3e20d0759fb8c4778055de63d1e9bee53))
+* remove apk build support ([fa37025](https://github.com/kowabunga-cloud/kaktus/commit/fa37025770fd012c75734be53413fbef75864e34))
+* remove trailing spaces ([a60fd94](https://github.com/kowabunga-cloud/kaktus/commit/a60fd943651dd1492fe74717206916fe428e836c))
+* require go 1.26.1 ([d52e9e6](https://github.com/kowabunga-cloud/kaktus/commit/d52e9e6e4f7681096514ca5c617b631f21bb198c))
+* simplify debian packaging ([510e071](https://github.com/kowabunga-cloud/kaktus/commit/510e0712bd7e6ea9301ce9910b5e3b9b9361e179))
+* update go dependencies ([cd9916c](https://github.com/kowabunga-cloud/kaktus/commit/cd9916c55d0cd9b2e22c6d42af0014c0a1508aed))
+
+### Documentation
+
+* add code owners ([2a930e6](https://github.com/kowabunga-cloud/kaktus/commit/2a930e677dd1a683e9a47d88baa95df6bfc33ca4))
+* add note about development guidelines ([cfea046](https://github.com/kowabunga-cloud/kaktus/commit/cfea046a10057df8e3d8d70d011b92a017008b8c))
+* updated changelog ([ea31501](https://github.com/kowabunga-cloud/kaktus/commit/ea31501559ac8f0a536cbfb4e6fea86b8811caaf))
+* updated logo ([e12369f](https://github.com/kowabunga-cloud/kaktus/commit/e12369f3f2cd0a8f63c58625f3553c1752bd15d7))
+* updated README ([96f0c32](https://github.com/kowabunga-cloud/kaktus/commit/96f0c32f87cac4a60d2e81eaec41bbd85934f2aa))
+
+### Features
+
+* add unit testing ([f700cdf](https://github.com/kowabunga-cloud/kaktus/commit/f700cdff9b385c7f15e33d29741951fd2ad34755))
+
 ## 0.64.1 (2025-12-30)
 * **NEW**: use external Kowabunga 'common' package.
 
