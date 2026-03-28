@@ -1,6 +1,6 @@
 module github.com/kowabunga-cloud/kaktus
 
-go 1.25.0
+go 1.26.1
 
 require (
 	github.com/ceph/go-ceph v0.38.0
