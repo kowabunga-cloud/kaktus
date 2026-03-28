@@ -1,3 +1,4 @@
+.claude/
 bin/
 plugins/*.so
 dist/
@@ -18,3 +19,4 @@ package.json
 yarn.lock
 openapitools.json
 coverage.txt
+coverage.out
