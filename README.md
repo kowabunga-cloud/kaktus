@@ -37,9 +37,28 @@ This approach allows you to:
 |--------------------|-----------------------------------------------------------------------------------------------------|
 | **Kaktus**           | [![Kowabunga Release](https://img.shields.io/github/v/release/kowabunga-cloud/kaktus)](https://github.com/kowabunga-cloud/kaktus/releases) |
 
+## Development Guidelines
+
+Kaktus development relies on [pre-commit hooks](http://www.pre-commit.com/) to ensure proper commits.
+
+Follow installation instructions [here](https://pre-commit.com/#install).
+
+Local per-repository installation can be done through:
+
+```sh
+$ pre-commit install --install-hooks
+```
+
+And system-wide global installation, through:
+
+```sh
+$ git config --global init.templateDir ~/.git-template
+$ pre-commit init-templatedir ~/.git-template
+```
+
 ## Development
 
-Kiwi development relies on [Semantic Versioning](https://semver.org/) and unscoped [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for development.
+Kaktus development relies on [Semantic Versioning](https://semver.org/) and unscoped [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for development.
 
 Changelog is automatically triggered from commits summary from the following commits types: **feat**, **fix**, **perf**, **chore**, **docs**, e.g.
 
@@ -48,6 +67,14 @@ feat!: upgrade API version         <- will increase version major number at rele
 feat: add new super nice feature   <- will increase version minor number at release
 fix: correct bug XYZ               <- will increase version patch number at release
 ```
+
+## Versioning
+
+Versioning generally follows [Semantic Versioning](https://semver.org/).
+
+## Authors
+
+Kaktus is maintained by [Kowabunga maintainers](https://github.com/orgs/kowabunga-cloud/teams/maintainers).
 
 ## License
 
