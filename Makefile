@@ -2,7 +2,6 @@
 # Apache License, Version 2.0 (see LICENSE or https://www.apache.org/licenses/LICENSE-2.0.txt)
 # SPDX-License-Identifier: Apache-2.0
 
-VERSION=0.64.1
 DIST=noble
 
 #export GOOS=linux
@@ -86,7 +85,7 @@ tests: ; $(info $(M) test suite…) @
 
 .PHONY: deb
 deb: ; $(info $(M) building Debian package…) @
-	$Q VERSION=$(VERSION) DIST=$(DIST) ./debian.sh
+	$Q ./debian.sh
 
 .PHONY: apk
 apk: ; $(info $(M) building Alpine package…) @
@@ -94,7 +93,7 @@ apk: ; $(info $(M) building Alpine package…) @
 
 .PHONY: get-lint
 get-lint: ; $(info $(M) downloading go-lint…) @
-	$Q test -x $(GOLINT) || curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s $(GOLINT_VERSION)
+	$Q test -x $(GOLINT) || curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s
 
 .PHONY: lint
 lint: get-lint ; $(info $(M) running go-lint…) @
