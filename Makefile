@@ -16,13 +16,8 @@ PLUGINS_DIR = plugins
 PLUGINS_KAKTUS_PKG_DIR = ./internal/kaktus/plugins
 
 GOLINT = $(BINDIR)/golangci-lint
-GOLINT_VERSION = v2.5.0
-
 GOVULNCHECK = $(BINDIR)/govulncheck
-GOVULNCHECK_VERSION = v1.1.4
-
 GOSEC = $(BINDIR)/gosec
-GOSEC_VERSION = v2.22.10
 
 PKGS = $(shell go list ./...)
 PKGS_SHORT = $(shell go list ./... | sed 's%github.com/kowabunga-cloud/kaktus/%%')
@@ -99,7 +94,7 @@ apk: ; $(info $(M) building Alpine package…) @
 
 .PHONY: get-lint
 get-lint: ; $(info $(M) downloading go-lint…) @
-	$Q test -x $(GOLINT) || sh -c $(GOLINT) --version 2> /dev/null| grep $(GOLINT_VERSION)  || curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s $(GOLINT_VERSION)
+	$Q test -x $(GOLINT) || curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s $(GOLINT_VERSION)
 
 .PHONY: lint
 lint: get-lint ; $(info $(M) running go-lint…) @
@@ -107,7 +102,7 @@ lint: get-lint ; $(info $(M) running go-lint…) @
 
 .PHONY: get-govulncheck
 get-govulncheck: ; $(info $(M) downloading govulncheck…) @
-	$Q test -x $(GOVULNCHECK) || GOBIN="$(PWD)/$(BINDIR)/" go install golang.org/x/vuln/cmd/govulncheck@$(GOVULNCHECK_VERSION)
+	$Q test -x $(GOVULNCHECK) || GOBIN="$(PWD)/$(BINDIR)/" go install golang.org/x/vuln/cmd/govulncheck@latest
 
 .PHONY: vuln
 vuln: get-govulncheck ; $(info $(M) running govulncheck…) @ ## Check for known vulnerabilities
@@ -115,7 +110,7 @@ vuln: get-govulncheck ; $(info $(M) running govulncheck…) @ ## Check for known
 
 .PHONY: get-gosec
 get-gosec: ; $(info $(M) downloading gosec…) @
-	$Q test -x $(GOSEC) || GOBIN="$(PWD)/$(BINDIR)/" go install github.com/securego/gosec/v2/cmd/gosec@$(GOSEC_VERSION)
+	$Q test -x $(GOSEC) || GOBIN="$(PWD)/$(BINDIR)/" go install github.com/securego/gosec/v2/cmd/gosec@latest
 
 .PHONY: sec
 sec: get-gosec ; $(info $(M) running gosec…) @ ## AST / SSA code checks
