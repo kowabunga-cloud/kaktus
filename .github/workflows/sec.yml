@@ -14,3 +14,5 @@ jobs:
   sec:
     uses: kowabunga-cloud/workflows/.github/workflows/go-sec.yml@master
     secrets: inherit
+    with:
+      pkgs: "librados-dev librbd-dev gcc"
