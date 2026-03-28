@@ -39,8 +39,13 @@ type DiskImage struct {
 	img  image.Image
 }
 
-func (img *DiskImage) Size() (uint64, error) {
-	return toUint64(img.img.Size())
+func (img *DiskImage) Size() uint64 {
+	s, err := toUint64(img.img.Size())
+	if err != nil {
+		klog.Error(err)
+		return 0
+	}
+	return s
 }
 
 func (img *DiskImage) Detect() {
