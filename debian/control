@@ -8,7 +8,7 @@ Standards-Version: 3.9.2
 
 Package: kowabunga-kaktus-agent
 Architecture: any
-Depends: ${misc:Depends}, librados2, librbd1
+Depends: ${misc:Depends}, librados2, librbd1, ovmf, swtpm, swtpm-tools
 Description: Kowabunga Kaktus Agent
  Kowabunga stands for 'Kvm Orchestrator With A BUNch of Goods Added'
  This is Kaktus agent, meant to control KVM/libvirt hypervisors and Ceph distributed storage.
