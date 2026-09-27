@@ -109,6 +109,19 @@ func (k *Kaktus) NodeCapabilities(args *proto.KaktusNodeCapabilitiesArgs, reply 
 }
 
 /*
+ * RPC GetLibvirtEndpoint()
+ */
+
+func (k *Kaktus) GetLibvirtEndpoint(args *proto.KaktusGetLibvirtEndpointArgs, reply *proto.KaktusGetLibvirtEndpointReply) error {
+	*reply = proto.KaktusGetLibvirtEndpointReply{
+		Protocol: k.agent.lcs.Protocol,
+		Address:  k.agent.lcs.Address,
+		Port:     k.agent.lcs.Port,
+	}
+	return nil
+}
+
+/*
  * RPC CreateInstance()
  */
 
@@ -147,6 +160,16 @@ func (k *Kaktus) DeleteInstance(args *proto.KaktusDeleteInstanceArgs, reply *pro
 func (k *Kaktus) UpdateInstance(args *proto.KaktusUpdateInstanceArgs, reply *proto.KaktusUpdateInstanceReply) error {
 	err := k.agent.lcs.UpdateInstance(args.Name, args.XML)
 	*reply = proto.KaktusUpdateInstanceReply{}
+	return err
+}
+
+/*
+ * RPC MigrateInstance()
+ */
+
+func (k *Kaktus) MigrateInstance(args *proto.KaktusMigrateInstanceArgs, reply *proto.KaktusMigrateInstanceReply) error {
+	err := k.agent.lcs.MigrateInstance(args.Name, args.DestinationURI)
+	*reply = proto.KaktusMigrateInstanceReply{}
 	return err
 }
 

@@ -314,6 +314,60 @@ func (lcs *LibvirtConnectionSettings) UpdateInstance(instanceName, xml string) e
 	return nil
 }
 
+// MigrateInstance performs a live, peer-to-peer migration of instanceName
+// to destinationURI (a full libvirt connection URI, e.g.
+// "qemu+tls://kaktus-042.internal:16514/system"). Only Begin3/Perform3/
+// Confirm3 are called here: with MigratePeer2peer set, this node's own
+// libvirtd dials the destination itself and drives Prepare3/Finish3
+// internally, so no second libvirt connection is needed on our end.
+//
+// Attached volumes are network-backed (Ceph RBD) and are never touched by
+// this: only the compute definition moves. MigratePersistDest persists the
+// domain on the destination, and MigrateUndefineSource removes it from
+// this host once the migration completes successfully.
+//
+// The migration data stream itself (not the control connection to
+// destinationURI) is not additionally TLS-encrypted here: that requires
+// its own qemu.conf-level certificate setup on top of what's needed for
+// destinationURI, and Kaktus nodes within a region are assumed to already
+// be on a trusted, routed internal network (the same assumption every
+// other inter-node traffic, e.g. Ceph, already relies on).
+func (lcs *LibvirtConnectionSettings) MigrateInstance(instanceName, destinationURI string) error {
+	instance, err := lcs.getInstance(instanceName)
+	if err != nil {
+		return err
+	}
+
+	klog.Infof("Migrating virtual machine instance %s to %s ...", instanceName, destinationURI)
+
+	flags := uint64(virt.MigrateLive | virt.MigratePeer2peer | virt.MigratePersistDest | virt.MigrateUndefineSource)
+
+	cookie, _, err := lcs.Conn.DomainMigrateBegin3(*instance, nil, flags, nil, 0)
+	if err != nil {
+		klog.Errorf("unable to begin migration of instance %s: %v", instanceName, err)
+		return err
+	}
+
+	cookieOut, err := lcs.Conn.DomainMigratePerform3(*instance, nil, cookie, virt.OptString{destinationURI}, nil, flags, nil, 0)
+	if err != nil {
+		klog.Errorf("unable to perform migration of instance %s to %s: %v", instanceName, destinationURI, err)
+		return err
+	}
+
+	// note: the VM is very likely already running on the destination by
+	// this point (Perform3 only returns once the transfer has completed);
+	// a failure here mostly means source-side cleanup (e.g. undefine)
+	// didn't complete, not that the migration itself failed
+	err = lcs.Conn.DomainMigrateConfirm3(*instance, cookieOut, flags, 0)
+	if err != nil {
+		klog.Errorf("unable to confirm migration of instance %s: %v", instanceName, err)
+		return err
+	}
+
+	klog.Infof("Successfully migrated virtual machine instance %s to %s", instanceName, destinationURI)
+	return nil
+}
+
 func (lcs *LibvirtConnectionSettings) DeleteInstance(instanceName string) error {
 	instance, err := lcs.getInstance(instanceName)
 	if err != nil {
