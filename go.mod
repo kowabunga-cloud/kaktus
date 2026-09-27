@@ -7,7 +7,7 @@ require (
 	github.com/digitalocean/go-libvirt v0.0.0-20260217163227-273eaa321819
 	github.com/go-resty/resty/v2 v2.17.2
 	github.com/klauspost/compress v1.18.5
-	github.com/kowabunga-cloud/common v0.64.1
+	github.com/kowabunga-cloud/common v0.65.0
 	github.com/lima-vm/go-qcow2reader v0.7.1
 	github.com/machinebox/progress v0.2.0
 	gopkg.in/yaml.v3 v3.0.1
