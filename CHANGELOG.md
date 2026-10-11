@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.66.1](https://github.com/kowabunga-cloud/kaktus/compare/v0.66.0...v0.66.1) (2026-10-11)
+
+### Chores
+
+* **deps:** update go-ceph to v0.41.0 ([e123346](https://github.com/kowabunga-cloud/kaktus/commit/e123346530ed41d399d6528aaf876d83ef9e5bdd))
+
 ## [0.66.0](https://github.com/kowabunga-cloud/kaktus/compare/v0.65.0...v0.66.0) (2026-10-11)
 
 ### Bug Fixes
