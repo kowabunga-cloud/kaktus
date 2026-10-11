@@ -6,13 +6,17 @@ on:
     paths:
       - 'cmd/kaktus/**'
       - 'internal/kaktus/**'
+      - 'go.mod'
+      - 'go.sum'
+      - 'Makefile'
+      - '.github/workflows/**'
   pull_request:
     branches: master
   workflow_dispatch:
 
 jobs:
   sec:
-    uses: kowabunga-cloud/workflows/.github/workflows/go-sec.yml@master
+    uses: kowabunga-cloud/workflows/.github/workflows/go-sec.yml@v1
     secrets: inherit
     with:
       pkgs: "librados-dev librbd-dev gcc"
