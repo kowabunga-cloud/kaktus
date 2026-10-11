@@ -3,7 +3,7 @@ module github.com/kowabunga-cloud/kaktus
 go 1.27.0
 
 require (
-	github.com/ceph/go-ceph v0.41.0
+	github.com/ceph/go-ceph v0.40.0
 	github.com/digitalocean/go-libvirt v0.0.0-20260814190004-1a83157e1858
 	github.com/go-resty/resty/v2 v2.17.2
 	github.com/klauspost/compress v1.20.1

@@ -22,3 +22,8 @@ updates:
     groups:
       go-modules:
         patterns: ["*"]
+    ignore:
+      # newer releases require Ceph 20.2.1+ librbd APIs, while Ubuntu 26.04
+      # LTS, the release packages target, ships Ceph 20.2.0
+      - dependency-name: github.com/ceph/go-ceph
+        versions: [">0.40.0"]
