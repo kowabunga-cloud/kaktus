@@ -22,8 +22,3 @@ updates:
     groups:
       go-modules:
         patterns: ["*"]
-    ignore:
-      # newer releases require librbd APIs unavailable on Ubuntu 24.04
-      # LTS, the release packages target
-      - dependency-name: github.com/ceph/go-ceph
-        versions: [">0.38.0"]
