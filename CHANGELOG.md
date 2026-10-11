@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.66.0](https://github.com/kowabunga-cloud/kaktus/compare/v0.65.0...v0.66.0) (2026-10-11)
+
+### Bug Fixes
+
+* pin go-ceph back to v0.38.0 ([a877a83](https://github.com/kowabunga-cloud/kaktus/commit/a877a83dd05fbafbe5bea2a8f679081586ac2d24))
+
+### Chores
+
+* add AGENTS ([069ba00](https://github.com/kowabunga-cloud/kaktus/commit/069ba0041ce3f997bf2014b8ee4c1cb8a2c8368c))
+* add GitHub Sponsors FUNDING.yml ([1b454f7](https://github.com/kowabunga-cloud/kaktus/commit/1b454f7dfdf056acb43b54d3c47b1d6a15097cd6))
+* bump common dependency to v0.65.0 ([04c06d8](https://github.com/kowabunga-cloud/kaktus/commit/04c06d89a5acd3c954111f07d477aab31684c1e9))
+* ease golangci-lint download ([7347e45](https://github.com/kowabunga-cloud/kaktus/commit/7347e45126dd5e5748d506447e587089c379cf7c))
+* update dependencies ([61c9680](https://github.com/kowabunga-cloud/kaktus/commit/61c96800cacd0f5a107b33a27b5317090d25bf69))
+
+### Features
+
+* add ovmf and swtpm dependencies for uefi and tpm virtualization ([9c06c7f](https://github.com/kowabunga-cloud/kaktus/commit/9c06c7fbc8c3bafdf3a8c935100f727dbe18fabd))
+* implement GetLibvirtEndpoint and MigrateInstance RPCs ([3a5b707](https://github.com/kowabunga-cloud/kaktus/commit/3a5b707a38808d1a4cf8eed55aa66d78c61188eb))
+
 ## [0.65.0](https://github.com/kowabunga-cloud/kaktus/compare/v0.64.1...v0.65.0) (2026-03-28)
 
 ### Bug Fixes
