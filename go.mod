@@ -6,7 +6,7 @@ require (
 	github.com/ceph/go-ceph v0.40.0
 	github.com/digitalocean/go-libvirt v0.0.0-20260814190004-1a83157e1858
 	github.com/go-resty/resty/v2 v2.17.2
-	github.com/klauspost/compress v1.20.1
+	github.com/klauspost/compress v1.20.3
 	github.com/kowabunga-cloud/common v0.66.0
 	github.com/lima-vm/go-qcow2reader v0.8.0
 	github.com/machinebox/progress v0.2.0
